@@ -47,7 +47,7 @@ public class DoubleMomentumCalculator {
 				.orElseThrow(() -> new DoubleMomentumCalculatorException("Problem with retrieving the best tracker."));
 	}
 	
-	private Boolean calculateAbsoluteMomentum(final PriceSummary firstTracker, final PriceSummary secondTracker) {
+	private boolean calculateAbsoluteMomentum(final PriceSummary firstTracker, final PriceSummary secondTracker) {
 		return firstTracker.getPerformance().subtract(secondTracker.getPerformance()).compareTo(BigDecimal.ZERO) > 0;
 	}
 }

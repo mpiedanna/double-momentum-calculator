@@ -31,8 +31,8 @@ public enum QuoteMapper {
 				.collect(
 					Collectors.toMap(i -> Tracker.CSPX_L, 
 						i -> new PriceSummary(
-							i.getAdjclose().get(0).getAdjclose().get(getIndex(quote, summaryTimestamp.getMin()).intValue()),
-							i.getAdjclose().get(0).getAdjclose().get(getIndex(quote, summaryTimestamp.getMax()).intValue())
+							i.getAdjclose().get(0).getClose().get(getIndex(quote, summaryTimestamp.getMin()).intValue()),
+							i.getAdjclose().get(0).getClose().get(getIndex(quote, summaryTimestamp.getMax()).intValue())
 						)
 					)
 		);

@@ -27,9 +27,9 @@ public class ReportGenerator {
 	private void generatePriceSummaries() {
 		quote.forEach((key, priceSummary) -> {
 			LOGGER.info("=== {} ===", key.getSummary());
-			LOGGER.info("Price 1 year ago : {}$", priceSummary.getLastYearPrice().toString());
-			LOGGER.info("Today's price : {}$", priceSummary.getTodaysPrice().toString());
-			LOGGER.info("Performance : {}%", priceSummary.getPerformance().toString());
+			LOGGER.info("Price 1 year ago : {}$", priceSummary.getLastYearPrice());
+			LOGGER.info("Today's price : {}$", priceSummary.getTodaysPrice());
+			LOGGER.info("Performance : {}%", priceSummary.getPerformance());
 		});
 	}
 }
