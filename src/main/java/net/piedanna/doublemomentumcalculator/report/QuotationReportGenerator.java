@@ -1,4 +1,4 @@
-package net.piedanna.doublemomentumcalculator;
+package net.piedanna.doublemomentumcalculator.report;
 
 import net.piedanna.doublemomentumcalculator.model.PriceSummary;
 import net.piedanna.doublemomentumcalculator.model.Tracker;
@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
-public class ReportGenerator {
+public class QuotationReportGenerator implements ReportGenerator {
 	
-	private static final Logger LOGGER =  LoggerFactory.getLogger(ReportGenerator.class);
+	private static final Logger LOGGER =  LoggerFactory.getLogger(QuotationReportGenerator.class);
 	private final Map<Tracker, PriceSummary> quote;
 	private final Tracker trackerToChoose;
 	
-	public ReportGenerator(Tracker trackerToChoose, Map<Tracker, PriceSummary> quote) {
+	public QuotationReportGenerator(Tracker trackerToChoose, Map<Tracker, PriceSummary> quote) {
 		this.quote = quote;
 		this.trackerToChoose = trackerToChoose;
 	}
