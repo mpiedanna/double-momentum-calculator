@@ -5,10 +5,10 @@ import lombok.Getter;
 
 @Getter
 public enum Tracker {
-	
-	BIL("BIL", "SPDR Bloomberg 1-3 Month T-Bill ETF", "Treasury Bonds"),
-	CSPX_L("CSPX.L", "iShares Core S&P 500 UCITS ETF USD (Acc)", "S&P 500"),
-	IXUS("IXUS", "iShares Core MSCI Total International Stock ETF", "ACWI EX-US");
+
+	VGIT("VGIT", "Vanguard Intermediate-Term Treasury Index Fund", "Treasury Bonds"),
+	VOO("VOO", "Vanguard 500 Index Fund", "S&P 500"),
+	VXUS("VXUS", "Vanguard Total Intl Stock Idx Fund", "ACWI EX-US");
 
 	@JsonValue
 	private final String ticker;

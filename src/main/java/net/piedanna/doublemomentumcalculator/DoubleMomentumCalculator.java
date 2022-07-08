@@ -18,20 +18,20 @@ public class DoubleMomentumCalculator {
 	public Tracker calculate() {
 		final Tracker bestTrackerPerformanceSinceLastTwelveMonth = getBestTrackerPerformanceSinceLastTwelveMonth();
 		
-		if (!List.of(Tracker.CSPX_L, Tracker.IXUS).contains(bestTrackerPerformanceSinceLastTwelveMonth)) {
+		if (!List.of(Tracker.VOO, Tracker.VXUS).contains(bestTrackerPerformanceSinceLastTwelveMonth)) {
 			throw new DoubleMomentumCalculatorException("Tracker not found.");
 		}
 		
-		Tracker trackerToChoice = Tracker.BIL;
+		Tracker trackerToChoice = Tracker.VGIT;
 		
 		// S&P 500 
 		// ACWI EX-US
-		if (Tracker.CSPX_L.equals(bestTrackerPerformanceSinceLastTwelveMonth) &&
-				calculateAbsoluteMomentum(prices.get(Tracker.CSPX_L), prices.get(Tracker.BIL))) {
-			trackerToChoice = Tracker.CSPX_L;
-		} else if (Tracker.IXUS.equals(bestTrackerPerformanceSinceLastTwelveMonth)
-				&& calculateAbsoluteMomentum(prices.get(Tracker.IXUS), prices.get(Tracker.BIL))){
-			trackerToChoice = Tracker.IXUS;
+		if (Tracker.VOO.equals(bestTrackerPerformanceSinceLastTwelveMonth) &&
+				calculateAbsoluteMomentum(prices.get(Tracker.VOO), prices.get(Tracker.VGIT))) {
+			trackerToChoice = Tracker.VOO;
+		} else if (Tracker.VXUS.equals(bestTrackerPerformanceSinceLastTwelveMonth)
+				&& calculateAbsoluteMomentum(prices.get(Tracker.VXUS), prices.get(Tracker.VGIT))){
+			trackerToChoice = Tracker.VXUS;
 		}
 		
 		return trackerToChoice;
@@ -41,7 +41,7 @@ public class DoubleMomentumCalculator {
 		return prices
 				.entrySet()
 				.stream()
-				.filter(price -> List.of(Tracker.CSPX_L, Tracker.IXUS).contains(price.getKey()))
+				.filter(price -> List.of(Tracker.VOO, Tracker.VXUS).contains(price.getKey()))
 				.max(Map.Entry.comparingByValue(Comparator.comparing(PriceSummary::getPerformance)))
 				.map(Map.Entry::getKey)
 				.orElseThrow(() -> new DoubleMomentumCalculatorException("Problem with retrieving the best tracker."));
