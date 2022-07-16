@@ -22,15 +22,15 @@ public class DoubleMomentumCalculator {
 			throw new DoubleMomentumCalculatorException("Tracker not found.");
 		}
 		
-		Tracker trackerToChoice = Tracker.VGIT;
+		Tracker trackerToChoice = Tracker.BIL;
 		
 		// S&P 500 
 		// ACWI EX-US
 		if (Tracker.VOO.equals(bestTrackerPerformanceSinceLastTwelveMonth) &&
-				calculateAbsoluteMomentum(prices.get(Tracker.VOO), prices.get(Tracker.VGIT))) {
+				calculateAbsoluteMomentum(prices.get(Tracker.VOO), prices.get(Tracker.BIL))) {
 			trackerToChoice = Tracker.VOO;
 		} else if (Tracker.VXUS.equals(bestTrackerPerformanceSinceLastTwelveMonth)
-				&& calculateAbsoluteMomentum(prices.get(Tracker.VXUS), prices.get(Tracker.VGIT))){
+				&& calculateAbsoluteMomentum(prices.get(Tracker.VXUS), prices.get(Tracker.BIL))){
 			trackerToChoice = Tracker.VXUS;
 		}
 		

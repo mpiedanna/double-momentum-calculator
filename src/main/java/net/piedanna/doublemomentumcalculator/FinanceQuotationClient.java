@@ -37,7 +37,7 @@ public class FinanceQuotationClient {
 				  .uri(new URI(
 						  ApiConstants.BASE_URL + 
 						  Tracker.VOO.getTicker() +
-						  "?comparisons=" + Tracker.VGIT.getTicker() +
+						  "?comparisons=" + Tracker.BIL.getTicker() +
 						  "%2C" + Tracker.VXUS.getTicker() + "&range=1y&region=US&interval=1mo&lang=en"))
 				  .version(HttpClient.Version.HTTP_2)
 				  .header("Content-Type", "application/json")

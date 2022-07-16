@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 public enum Tracker {
 
-	VGIT("VGIT", "Vanguard Intermediate-Term Treasury Index Fund", "Treasury Bonds"),
+	BIL("BIL", "SPDR Bloomberg 1-3 Month T-Bill ETF", "Treasury Bonds"),
 	VOO("VOO", "Vanguard 500 Index Fund", "S&P 500"),
 	VXUS("VXUS", "Vanguard Total Intl Stock Idx Fund", "ACWI EX-US");
 
