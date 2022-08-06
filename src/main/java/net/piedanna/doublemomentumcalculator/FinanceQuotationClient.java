@@ -36,9 +36,9 @@ public class FinanceQuotationClient {
 		return HttpRequest.newBuilder()
 				  .uri(new URI(
 						  ApiConstants.BASE_URL + 
-						  Tracker.VOO.getTicker() +
+						  Tracker.CSPX_L.getTicker() +
 						  "?comparisons=" + Tracker.BIL.getTicker() +
-						  "%2C" + Tracker.VXUS.getTicker() + "&range=1y&region=US&interval=1mo&lang=en"))
+						  "%2C" + Tracker.IXUS.getTicker() + "&range=1y&region=US&interval=1mo&lang=en"))
 				  .version(HttpClient.Version.HTTP_2)
 				  .header("Content-Type", "application/json")
 				  .header("X-API-KEY", ApiConstants.TOKEN)
